@@ -62,7 +62,15 @@ def deleteweb(request):
     return render(request,'display_webpage.html',context={'webpages':webpages})
 
 
-
+def updateweb(request):
+    #Webpage.objects.filter(name='Pual').update(url='https://Paul.com',topic_name='singing')
+    #Webpage.objects.filter(name='python').update(url='https://Paul.com',topic_name='singing')
+    #Webpage.objects.update_or_create(name='Pual',defaults={'url':'http://haipual.info.in'})
+    t=Topic.objects.get_or_create(topic_name='singing')[0]
+    Webpage.objects.update_or_create(name='Dhoni',topic_name=t,defaults={'url':'http://Dhoni.info.in','topic_name':t})
+    
+    webpages=Webpage.objects.all()
+    return render(request,'display_webpage.html',context={'webpages':webpages})
 
 
 
