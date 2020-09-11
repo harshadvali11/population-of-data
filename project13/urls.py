@@ -23,4 +23,5 @@ urlpatterns = [
     path('displaytopics/',views.display_topic,name='display_topic'),
     path('displaywebpages/',views.display_webpage,name='display_webpage'),
     path('displayaccess/',views.display_access,name='display_access'),
+    path('deleteweb/',views.deleteweb,name='deleteweb'),
 ]
